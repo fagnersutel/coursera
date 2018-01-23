@@ -19,3 +19,7 @@ barplot(
     main="Emissoes PM2.5 por Ano nos EUA"
 )
 dev.off()
+
+totalNEI$Emissions[1] > totalNEI$Emissions[4]
+
+
