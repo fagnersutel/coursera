@@ -20,6 +20,5 @@ barplot(
 )
 dev.off()
 
-totalNEI$Emissions[1] > totalNEI$Emissions[4]
-
+totalNEI[with(totalNEI, order(-Emissions)), ]
 
