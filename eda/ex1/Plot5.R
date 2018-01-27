@@ -33,7 +33,7 @@ png("Plot5.png", width=480, height=480)
 ggplot(veiculos, aes(year, Emissions)) +
     geom_line(col = "#085BD3") +
     geom_point(col = "orange") +
-    ggtitle(expression("Emissoes de PM2.5 por Ano em Baltimore por Veiculos Automotores: 1999-2008)"))+
+    ggtitle(expression("Emissoes de PM2.5 por Ano em Baltimore por Veiculos Automotores:)"))+
     theme(legend.title = element_text(face = "bold")) +
     ylab(expression("Emissoes de PM2.5 (Toneladas)")) +
     xlab("Ano") +
@@ -47,6 +47,6 @@ ggplot(veiculos,aes(factor(year),Emissions)) +
     geom_bar(stat="identity",fill="#48D1CC",width=0.75) +
     theme_bw() +  guides(fill=FALSE) +
     labs(x="Ano", y=expression("Emissoes de PM2.5 (Toneladas)")) + 
-    labs(title=expression("Emissoes de PM2.5 por Ano em Baltimore por Veiculos Automotores: 1999-2008"))
+    labs(title=expression("Emissoes de PM2.5 por Ano em Baltimore por Veiculos Automotores:"))
 
 dev.off()
