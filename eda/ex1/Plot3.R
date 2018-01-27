@@ -1,5 +1,4 @@
 setwd('~/OneDrive/Cursos/Coursera/DataScienceSpecialization/coursera/eda/ex1/')
-list.files()
 summarySCC_PM25 <- readRDS("FNEI_data/summarySCC_PM25.rds")
 Source_Classification_Code <- readRDS("FNEI_data/Source_Classification_Code.rds")
 
