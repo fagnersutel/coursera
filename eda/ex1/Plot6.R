@@ -27,7 +27,7 @@ ggplot(cidade_veiculos, aes(x=year, y=Emissions, fill=fips)) +
     guides(fill=FALSE) + theme_bw() +
     labs(x="year", y=expression("Total PM"[2.5]*" Emission (Kilo-Tons)")) + 
     labs(title=expression("PM"[2.5]*" Motor Vehicle Source Emissions in Baltimore & LA, 1999-2008"))  +
-    xlim(1996, 2011)
+    xlim(1997, 2011)
 
 
 #Criamos o device para gerar um arquivo png / Create a device to obtain a png file
