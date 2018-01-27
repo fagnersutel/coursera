@@ -1,4 +1,4 @@
-setwd('~/OneDrive/Cursos/Coursera/DataScienceSpecialization/coursera/eda/ex1/')
+setwd('~/OneDrive/Cursos/Coursera/DataScienceSpecialization/Exploratory Data Analysis/week4/coursera/eda/ex1/')
 summarySCC_PM25 <- readRDS("FNEI_data/summarySCC_PM25.rds")
 Source_Classification_Code <- readRDS("FNEI_data/Source_Classification_Code.rds")
 
@@ -20,13 +20,14 @@ ggplot(veiculos, aes(year, Emissions, col=(fips))) +
     scale_colour_discrete(name = "Fontes") 
 
 #Grafico de barras / barplot
-#Não esta ajustando ano inteiro, ver: 
+#N??o esta ajustando ano inteiro, ver: 
 ggplot(cidade_veiculos, aes(x=year, y=Emissions, fill=fips)) +
     geom_bar(aes(fill=year),stat="identity") +
     facet_grid(.~fips) +
     guides(fill=FALSE) + theme_bw() +
     labs(x="year", y=expression("Total PM"[2.5]*" Emission (Kilo-Tons)")) + 
-    labs(title=expression("PM"[2.5]*" Motor Vehicle Source Emissions in Baltimore & LA, 1999-2008"))
+    labs(title=expression("PM"[2.5]*" Motor Vehicle Source Emissions in Baltimore & LA, 1999-2008"))  +
+    xlim(1996, 2011)
 
 
 #Criamos o device para gerar um arquivo png / Create a device to obtain a png file
