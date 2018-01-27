@@ -18,11 +18,12 @@ ggplot(origem, aes(year, Emissions, col = type)) +
     theme(legend.title = element_text(face = "bold")) +
     ylab(expression("Emissoes de PM2.5 (Toneladas)")) +
     xlab("Ano") +
-    scale_colour_discrete(name = "Fontes") 
+    scale_colour_manual(values = c("red", "blue", "green", "orange")) 
 
 #Grafico de barras / barplot
 ggplot(city,aes(factor(year),Emissions,fill=type)) +
-    facet_grid(.~type,scales = "free",space="free") + 
+    facet_grid(.~type,scales = "free_y",space="free") + 
+    scale_fill_brewer(palette="Dark2") +
     labs(x="Ano", y=expression("Emissoes de PM2.5 (Toneladas)")) + 
     labs(title=expression("Emissoes de PM2.5 por Ano em Baltimore por Origem")) +
     geom_bar(stat="identity") +
@@ -34,20 +35,21 @@ png("Plot3.png", width=480, height=480)
 ggplot(origem, aes(year, Emissions, col = type)) +
     geom_line() +
     geom_point() +
-    ggtitle(expression("Emissoes Anuais de PM2.5 por Tipo em Baltimore)"))+
+    ggtitle(expression("Emissoes de PM2.5 por Ano em Baltimore por Origem)"))+
     theme(legend.title = element_text(face = "bold")) +
     ylab(expression("Emissoes de PM2.5 (Toneladas)")) +
     xlab("Ano") +
-    scale_colour_discrete(name = "Fontes") 
+    scale_colour_manual(values = c("red", "blue", "green", "orange")) 
 
 dev.off()
 
 #Criamos o segundo device para gerar um arquivo png B/ Create a second device to obtain a png file B
 png("Plot3b.png", width=480, height=480)
 ggplot(city,aes(factor(year),Emissions,fill=type)) +
-    facet_grid(.~type,scales = "free",space="free") + 
+    facet_grid(.~type,scales = "free_y",space="free") + 
+    scale_fill_brewer(palette="Dark2") +
     labs(x="Ano", y=expression("Emissoes de PM2.5 (Toneladas)")) + 
-    labs(title=expression("Emissoes Anuais de PM2.5 por Tipo em Baltimore")) +
+    labs(title=expression("Emissoes de PM2.5 por Ano em Baltimore por Origem")) +
     geom_bar(stat="identity") +
     theme_bw() + guides(fill=FALSE)
 
