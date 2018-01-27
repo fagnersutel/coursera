@@ -38,7 +38,7 @@ ggplot(ResultadorCarvao, aes(year,Emissions/10^5, col = type)) +
 #Plotamos os dados em grafico de barras
 #Plot the data em bar chart
 ggplot(summarySCC_PM25Coal,aes(factor(year),Emissions/10^5)) +
-    geom_bar(stat="identity",fill="grey",width=0.75) +
+    geom_bar(stat="identity",fill="#48D1CC",width=0.75) +
     theme_bw() +  guides(fill=FALSE) +
     labs(x="Ano", y=expression("Emissao Norte Americana de PM2.5 (10^5 Toneladas)")) + 
     labs(title=expression("Emissoes PM2.5 de Carvao por Ano nos EUA (10^5 Toneladas) 1999 ~ 1998"))
@@ -65,7 +65,7 @@ dev.off()
 png("Plot4b.png", width=480, height=480)
 #Plot the data
 ggplot(summarySCC_PM25Coal,aes(factor(year),Emissions/10^5)) +
-    geom_bar(stat="identity",fill="grey",width=0.75) +
+    geom_bar(stat="identity",fill="#48D1CC",width=0.75) +
     theme_bw() +  guides(fill=FALSE) +
     labs(x="Ano", y=expression("Emissao Norte Americana de PM2.5 (10^5 Toneladas)")) + 
     labs(title=expression("Emissoes PM2.5 de Carvao por Ano nos EUA 1999 ~ 1998"))
