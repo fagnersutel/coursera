@@ -191,6 +191,12 @@ plot(media_de_passadas$interval, media_de_passadas$steps, type=&quot;l&quot;, xl
 <pre class="r"><code>maior_intervalo &lt;- media_de_passadas[which.max(media_de_passadas$steps),1]
 paste(&quot;O Maior numero de passadas ao longo do dia foi: &quot;, maior_intervalo, sep = &quot; &quot;)</code></pre>
 <pre><code>## [1] &quot;O Maior numero de passadas ao longo do dia foi:  835&quot;</code></pre>
+</div>
+<div id="obtendo-valores-nulos-na" class="section level2">
+<h2>Obtendo valores Nulos (NA)</h2>
+<p>Retornando o numero de linhas com volore nulos NAs</p>
+<pre class="r"><code>sum(is.na(data_na))</code></pre>
+<pre><code>## [1] 2304</code></pre>
 <p>`</p>
 </div>
 

@@ -86,6 +86,14 @@ paste("O Maior numero de passadas ao longo do dia foi: ", maior_intervalo, sep =
 ```
 
 
+## Obtendo valores Nulos (NA)
+
+Retornando o numero de linhas com volore nulos NAs
+
+```{r}
+sum(is.na(data_na))
+```
+
 
 
 `
