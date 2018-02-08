@@ -1,0 +1,91 @@
+---
+title: "Assigment 01 - Reproducible Research"
+author: "Fagner Sutel de Moura"
+date: "2/8/2018"
+output: html_document
+---
+
+## Carga e Processamento dos dados
+
+Inicialmente farei a cargadis dados e os verifico  
+
+```{r}
+data_na <- read.csv("activity.csv")
+head(data)
+```
+
+Agora elimino os valores nulos e verifico 
+
+
+```{r}
+data <- na.omit(data_na)
+head(data)
+```
+
+
+## Plotagens
+
+Carrego as bibliotecas necesarias
+
+```{r livrarias, echo=TRUE}
+library(ggplot2)
+library(dplyr)
+```
+
+
+Filtro os dados para passosik diarios
+
+```{r}
+passos <- data %>%
+  group_by(date) %>%
+  summarise(steps = sum(steps))
+```
+
+## Inclusao de Plots
+
+Monto a plotagem dos dados  
+
+
+```{r passadas, echo=FALSE}
+ggplot(passos, aes(x = steps)) +
+    geom_histogram(fill = "blue", binwidth = 1000) +
+    labs(title = "Passadas diarias", x = "Passadas", y = "Frequencia")
+```
+
+## Obtendo as medidas centrais
+
+Obtemos a media
+
+```{r}
+media <- mean(passos$steps)
+paste("A media foi de: ", media, sep = " " )
+```
+
+Obtemos a mediana
+
+```{r}
+mediana <- median(passos$steps)
+paste("A mediana foi de: ", mediana, sep = " " )
+```
+
+
+
+```{r}
+media_de_passadas <- data %>%
+  group_by(interval) %>%
+  summarise(steps = mean(steps))
+
+
+plot(media_de_passadas$interval, media_de_passadas$steps, type="l", xlab="Intervalo", ylab="Passadas",main="Media Diaria de Passadas por Intervalo")
+```
+
+
+```{r}
+maior_intervalo <- media_de_passadas[which.max(media_de_passadas$steps),1]
+paste("O Maior numero de passadas ao longo do dia foi: ", maior_intervalo, sep = " ")
+```
+
+
+
+
+`
